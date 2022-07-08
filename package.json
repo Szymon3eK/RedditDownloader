@@ -1,0 +1,28 @@
+{
+  "name": "redditdownloader",
+  "version": "1.0.0",
+  "description": "Video downloader from reddit using telegram",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Szymon3eK/RedditDownloader.git"
+  },
+  "author": "Szymon3eK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Szymon3eK/RedditDownloader/issues"
+  },
+  "homepage": "https://github.com/Szymon3eK/RedditDownloader#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "ngrok": "^4.3.1",
+    "node-fetch": "^3.2.6",
+    "node-telegram-bot-api": "^0.58.0",
+    "nodemon": "^2.0.19"
+  }
+}
