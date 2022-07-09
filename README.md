@@ -3,11 +3,11 @@ Video downloader from reddit using telegram 💙
 
 The program is written in Polish, but it is translated into English
 
-Requirements
-    Software:
+Requirement
+    Software
         node.js
         ffmpeg
-    Libraries:
+    Libraries
         node-telegram-bot-api
         ngrok
         node-fetch
