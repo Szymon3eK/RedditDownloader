@@ -28,4 +28,4 @@ Example
 https://www.youtube.com/watch?v=Ebe0fYFCk54
 
 Contact:
-    Discord: !Szymon3eK#0003
+    - Discord: !Szymon3eK#0003
