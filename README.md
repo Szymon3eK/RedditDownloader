@@ -7,16 +7,16 @@ The program is written in Polish, but it is translated into English
 
 Software
 
-node.js
+node.js,
 ffmpeg
 
 Libraries
 
-node-telegram-bot-api
-ngrok
-node-fetch
-fs
-https
+node-telegram-bot-api,
+ngrok,
+node-fetch,
+fs,
+https,
 http
 
 
