@@ -20,7 +20,7 @@ https,
 http
 
 
-#How to use program?
+How to use program?
 1. Download node.js and FFpmeg
 2. download this repo
 3. write npm install into cmd
@@ -31,5 +31,4 @@ http
 Example
 https://www.youtube.com/watch?v=Ebe0fYFCk54
 
-Contact:
-    - Discord: !Szymon3eK#0003
+!Szymon3eK#0003
