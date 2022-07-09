@@ -3,7 +3,7 @@ Video downloader from reddit using telegram 💙
 
 The program is written in Polish, but it is translated into English
 
-#Requirements
+<p style = "font-size: 50px">Requirements</p>
 Software:
     node.js
     ffmpeg
