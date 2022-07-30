@@ -7,8 +7,6 @@ const bot = new TelegramBot(token, {polling: true});
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-const ngrok = require('ngrok');
-ngrok.authtoken(config.ngrokauthtoken);
 const { exec } = require('child_process'); 
 
 const http = require('http')
@@ -77,47 +75,20 @@ bot.on('message', (msg) => {
           console.log('jakis problem jest')
           return;
         }
-        bot.sendMessage(chatId, "[✅] Koncowy plik zostal wygenerowany. Czekamy na odpowiedz lokalnego serwera oraz NGROK, oraz odrazu posprzatalismy pliki ♻")
-        //The final file has been generated. We are waiting for the response from the local server and NGROK, and we cleaned the files right away
+        bot.sendMessage(chatId, "[✅] Koncowy plik zostal wygenerowany. Juz ci go wysylamy")
+        //The final file has been generated. We're sending it to you
         fs.unlinkSync(`./media/video/${randomnumber}.mp4`)
         fs.unlinkSync(`./media/audio/${randomnumber}.mp3`)
-  
-  
-        let app = http.createServer((req, res) => {
-          res.writeHead(200, {'Content-Type': 'video/mp4'});
-          let vidstream = fs.createReadStream(`media/success/${randomnumber}.mp4`);
-          vidstream.pipe(res);
-        });
-        
-        app.listen(9999, '127.0.0.1');
-        
-        (async function() {
-          const url = await ngrok.connect(9999);
-          const api = ngrok.getApi();
-          const tunnels = await api.listTunnels();
-  
-          await bot.sendMessage(chatId, `[💚] Tutaj jest twoj link z filmikiem \n ${tunnels.tunnels[0].public_url} \n Po 15 sekundach link wygasa oraz film zostaje usuniety`)
-          //Here is your video link ... after 15 seconds, the link will expire and the video will be removed
-        })();
-  
-        setTimeout(function() {
+
+          const successfile = fs.readFileSync(`media/success/${randomnumber}.mp4`);
+          bot.sendVideo(chatId, successfile)
           fs.unlinkSync(`./media/success/${randomnumber}.mp4`)
-          ngrok.kill();
-          app.close();
-          bot.sendMessage(chatId, `[💛] Usunieto film, usunieto tunel oraz wylaczono localhost!`)
-          //Removed movie, removed tunnel and disabled localhost!
-  
-        }, 15000);
-  
+
+
+
+
+
       })
-    } else {
-      bot.sendMessage(chatId, "[⛔] Blad! Sprobuj ponownie")
-      //Error! Try again
     }
-    }, 5000);
-  
-    } else {
-      bot.sendMessage(chatId, "[⛔] Mordko chyba nie podales linku ;/")
-      // I think you didn't provide the link
-    }  
-  })
+  }, 5000)
+}})

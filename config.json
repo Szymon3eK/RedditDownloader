@@ -1,4 +1,3 @@
 {
-    "telegramtoken": "TOKEN FROM BOTFATHER",
-    "ngrokauthtoken": "TOKEN FROM NGROK"
+    "telegramtoken": "TELEGRAM TOKEN"
 }
