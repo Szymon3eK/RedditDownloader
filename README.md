@@ -13,11 +13,8 @@ ffmpeg
 Libraries
 
 node-telegram-bot-api,
-ngrok,
 node-fetch,
 fs,
-https,
-http
 
 
 How to use program?
